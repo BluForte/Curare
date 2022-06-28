@@ -1,3 +1,4 @@
+import 'package:curare_project/pages/userpages/uhome.dart';
 import 'package:flutter/material.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'dregister_page.dart';
@@ -172,31 +173,6 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                // Confirm Password
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                //   child: TextField(
-                //     obscureText: true,
-                //     controller: _confirmpasswordController,
-                //     decoration: InputDecoration(
-                //       enabledBorder: OutlineInputBorder(
-                //         borderSide: const BorderSide(color: Colors.white),
-                //         borderRadius: BorderRadius.circular(12),
-                //       ),
-                //       focusedBorder: OutlineInputBorder(
-                //         borderSide: const BorderSide(color: Colors.blue),
-                //         borderRadius: BorderRadius.circular(12),
-                //       ),
-                //       hintText: 'Confirm Password',
-                //       fillColor: Colors.grey[200],
-                //       filled: true,
-                //     ),
-                //   ),
-                // ),
-
-                // const SizedBox(
-                //   height: 15,
-                // ),
                 // Sign_Up button
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -314,7 +290,11 @@ class _PRegisterPageState extends State<PRegisterPage> {
             TextButton(
               child: const Text("OK"),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Mypage1(),
+                    ));
               },
             ),
           ],
