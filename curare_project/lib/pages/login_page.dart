@@ -1,3 +1,4 @@
+import 'package:curare_project/pages/userpages/uhome.dart';
 import 'package:flutter/material.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'pregister_page.dart';
@@ -250,10 +251,14 @@ class _LoginPageState extends State<LoginPage> {
           title: const Text("Success!"),
           content: Text(message),
           actions: <Widget>[
-            new TextButton(
+            TextButton(
               child: const Text("OK"),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Mypage1(),
+                    ));
               },
             ),
           ],
@@ -270,7 +275,7 @@ class _LoginPageState extends State<LoginPage> {
           title: const Text("Error!"),
           content: Text(errorMessage),
           actions: <Widget>[
-            new TextButton(
+            TextButton(
               child: const Text("OK"),
               onPressed: () {
                 Navigator.of(context).pop();
