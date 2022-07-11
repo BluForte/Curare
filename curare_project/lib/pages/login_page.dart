@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 30),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () => doUserResetPassword(),
                         child: const Text(
                           'Forgot password?',
                           style: TextStyle(
@@ -148,16 +148,13 @@ class _LoginPageState extends State<LoginPage> {
                         border: Border.all(color: Colors.white),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Center(
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: const Text(
-                            'Log in',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+                      child: const Center(
+                        child: Text(
+                          'Log in',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         ),
                       ),
@@ -302,6 +299,20 @@ class _LoginPageState extends State<LoginPage> {
       });
     } else {
       showError(response.error!.message);
+    }
+  }
+
+  // Forgot Password / Reset Password -- instructions to be sent to email
+
+  void doUserResetPassword() async {
+    final ParseUser user = ParseUser(null, null, _emailController.text.trim());
+    final ParseResponse parseResponse = await user.requestPasswordReset();
+    if (parseResponse.success) {
+      showSuccess(
+        'Password reset instructions have been sent to email!',
+      );
+    } else {
+      showError(parseResponse.error!.message);
     }
   }
 }

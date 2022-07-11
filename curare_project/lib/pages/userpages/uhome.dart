@@ -112,17 +112,15 @@ class _Mypage1State extends State<Mypage1> {
                               'https://assets4.lottiefiles.com/packages/lf20_wdXBRc.json'),
                         ),
                         Column(
-                          children: [
+                          children: const [
                             Text(
                               'How do u feel today',
                               style: TextStyle(
                                 fontSize: 15,
                               ),
                             ),
-                            Container(
-                              child: Center(
-                                child: Text('"We Exist To Care"'),
-                              ),
+                            Center(
+                              child: Text('"We Exist To Care"'),
                             ),
                           ],
                         )
@@ -162,15 +160,11 @@ class _Mypage1State extends State<Mypage1> {
                               child: Center(
                                 child: Column(
                                   children: [
-                                    Container(
-                                      child: Icon(Icons.token_outlined),
-                                    ),
-                                    Container(
-                                      child: Text(
-                                        'BookAppointment',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(fontSize: 22),
-                                      ),
+                                    Icon(Icons.token_outlined),
+                                    Text(
+                                      'BookAppointment',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontSize: 22),
                                     ),
                                     Container(
                                       height: 90,
