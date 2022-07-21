@@ -293,7 +293,7 @@ class _PRegisterPageState extends State<PRegisterPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Mypage1(),
+                      builder: (context) => Mypage1(),
                     ));
               },
             ),
