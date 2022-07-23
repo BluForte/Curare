@@ -1,3 +1,4 @@
+import 'package:curare_project/pages/userpages/success.dart';
 import 'package:flutter/material.dart';
 
 class ProfileUI2 extends StatelessWidget {
@@ -190,10 +191,18 @@ class ProfileUI2 extends StatelessWidget {
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
               color: Colors.blue,
-              child: Text(
-                'go to payments',
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
+              child: GestureDetector(
+                child:  Text(
+                  'go to payments',
+                  style: TextStyle(color: Colors.white, fontSize: 15)),
+              
+                 onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Success()),
+                  );
+                 }
+              )
             ),
           ),
         ])));
